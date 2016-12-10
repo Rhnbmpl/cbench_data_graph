@@ -11,7 +11,7 @@ le=[]
 
 #file.append(input('Enter file1 : '))
 #file.append(input('Enter file2 : '))
-color=['-ro','-b*','-g+','-m^']
+color=['-ro','-b*','-g+','-m^'] #Line draw format can add more if input files are more than 4
 for q in range(1,o):
     F=open(file[q],'r')
     time=[]
@@ -36,7 +36,7 @@ for q in range(1,o):
         dat=float(z[0])
         data.append(dat*1000)
     F.close()
-    colo=color[q-1]         #Enter names of lines manually for now
+    colo=color[q-1]         #Enter names of lines manually for now, add more if you like with extra else if statements
     #c=some string operations with the current file name eg: NOX_thr.txt====>NOX or just enter the names manually like below
     if q==1:
         c='NOX'
@@ -47,13 +47,13 @@ for q in range(1,o):
     elif q==4:
     	c='OpenDaylight'
 
-    plt.plot(time,data,colo,label=c,linewidth=4)
+    plt.plot(time,data,colo,label=c,linewidth=4) #change line thickness by changing linewidth value
     print(data)
     print(time)
 plt.legend(loc=4)				#Location for legend; 1==>top-left; 2==>top-right; 3==>bot-right; 4==>bot-right
-plt.title('Latency of NOX vs POX vs Beacon vs Opendaylight')
+plt.title('Latency of NOX vs POX vs Beacon vs Opendaylight')#Title
 plt.axhline(y=0, color='k')
 plt.axvline(x=0, color='k')
-plt.xlabel('Time(seconds)')
-plt.ylabel('Flows per second')
+plt.xlabel('Time(seconds)')     #X-Axis Label
+plt.ylabel('Flows per second')  #Y-Axis label
 plt.show()
